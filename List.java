@@ -89,23 +89,25 @@ public class List {
     }
 
 
-    
+
     /** GIVE If the given character exists in one of the CharData objects
      *  in this list, removes this CharData object from the list and returns
      *  true. Otherwise, returns false. */
     public boolean remove(char chr) {
         Node prev = null;
         Node current = first;
-        while (current.cp.chr != chr && current != null) {
+        while (current != null && current.cp.chr != chr) {
             prev = current;
             current = current.next;
         }
-        if (current == null) 
-            return false; 
-        if (prev == null)
+        if (current == null) return false; // not found
+        // Remove the elements. If it's the first element, updates first
+        if (prev == null) { // it's the first element
             first = first.next;
-        else
+        }
+        else {
             prev.next = current.next;
+        }
         size--;
         return true;
     }
