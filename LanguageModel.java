@@ -10,6 +10,7 @@ public class LanguageModel {
     // The window length used in this model.
     int windowLength;
     
+    
     // The random number generator used by this model. 
 	private Random randomGenerator;
 
