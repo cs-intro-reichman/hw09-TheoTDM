@@ -100,9 +100,10 @@ public class List {
             prev = current;
             current = current.next;
         }
-        if (current == null) return false; // not found
-        // Remove the elements. If it's the first element, updates first
-        if (prev == null) { // it's the first element
+        if (current == null) {
+            return false; 
+        }
+        if (prev == null) { 
             first = first.next;
         }
         else {
